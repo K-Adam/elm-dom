@@ -3,6 +3,10 @@
 Library for reading information off the DOM. Use this if you need to
 discover information (width, position, className, ...) of rendered elements.
 
+This library is a fork of [debois/elm-dom](https://github.com/debois/elm-dom). It contains work from many contributors, see: [list of contributors](https://github.com/K-Adam/elm-dom)
+
+---
+
 Elm has two major hurdles to overcome when working with the DOM:
 
  1. Elm is pure, but the DOM mutates constantly. A function that,
