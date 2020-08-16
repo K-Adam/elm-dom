@@ -238,7 +238,9 @@ type alias Rectangle =
     }
 
 
-{-| Approximation of the method
+{-| Obsolete: since Elm 0.19 use Browser.Dom.getElement.
+
+ Approximation of the method
 [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Floaterface/nsIDOMClientRect),
 based off
 [this stackoverflow answer](https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element).
@@ -250,13 +252,6 @@ does not have explicit positioning (e.g., `position: relative;`); see
 Also note that this decoder is likely computationally expensive and may produce
 results that differ slightly from `getBoundingClientRect` in browser-dependent
 ways.
-
-(I don't get to call getBoundingClientRect directly from Elm without going
-native or using ports; my packages don't get to go native and I can find no
-solution with ports. So we do it like in the bad old days with an O(lg n)
-traversal of the DOM, browser-dependencies and CSS quirks, only now through
-presumably expensive JSON decoders. It's 2007 forever, baby!)
-
 -}
 boundingClientRect : Decoder Rectangle
 boundingClientRect =
